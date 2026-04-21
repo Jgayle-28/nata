@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
 import { Provider } from 'react-redux'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 import './index.css'
 import store from './store/store'
@@ -15,24 +16,26 @@ const authAudience = import.meta.env.VITE_AUTH0_AUDIENCE || ''
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <BrowserRouter>
-          <Auth0Provider
-            domain={authDomain}
-            clientId={authClientId}
-            authorizationParams={{
-              redirect_uri: `${window.location.origin}/auth/callback`,
-              audience: authAudience || undefined,
-            }}
-            cacheLocation='localstorage'
-            useRefreshTokens
-          >
-            <App />
-          </Auth0Provider>
-        </BrowserRouter>
-      </ThemeProvider>
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <BrowserRouter>
+            <Auth0Provider
+              domain={authDomain}
+              clientId={authClientId}
+              authorizationParams={{
+                redirect_uri: `${window.location.origin}/auth/callback`,
+                audience: authAudience || undefined,
+              }}
+              cacheLocation='localstorage'
+              useRefreshTokens
+            >
+              <App />
+            </Auth0Provider>
+          </BrowserRouter>
+        </ThemeProvider>
+      </Provider>
+    </HelmetProvider>
   </StrictMode>,
 )

@@ -45,10 +45,17 @@ function Reveal({ children, delay = 0 }) {
   )
 }
 
+import SEO from '../components/common/SEO'
+
 function About() {
   return (
     <Box>
-      {/* ── Hero ── */}
+      <SEO
+        title='About Us'
+        description='Learn about NATA — the National Association of Tattoo Artists. Our mission is to protect and empower tattoo artists and piercers nationwide.'
+        path='/about'
+        image='/about-us.jpg'
+      />
       <Box
         sx={{
           position: 'relative',

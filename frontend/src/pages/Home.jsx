@@ -17,6 +17,7 @@ import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined'
 import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined'
 import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutlined'
 import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined'
+import SEO from '../components/common/SEO'
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined'
 import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
@@ -240,7 +241,11 @@ function TestimonialSlider() {
 function Home() {
   return (
     <Box>
-      {/* Hero Section ──----------------------------------- */}
+      <SEO
+        title='Home'
+        description='NATA provides tattoo artists and piercers with health insurance, life insurance, and exclusive membership benefits. Join the national association today.'
+        path='/'
+      />
       <Box
         sx={{
           position: 'relative',

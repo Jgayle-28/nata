@@ -19,6 +19,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { createCheckoutSession } from '../services/paymentService'
 import CornerCard from '../components/common/CornerCard'
 import GradientBorderButton from '../components/common/GradientBorderButton'
+import SEO from '../components/common/SEO'
 
 const plans = [
   {
@@ -109,6 +110,11 @@ function Membership() {
 
   return (
     <Box>
+      <SEO
+        title='Membership Benefits'
+        description='Join NATA and access comprehensive health insurance, life insurance, and exclusive corporate perks designed for tattoo artists and piercers.'
+        path='/membership'
+      />
       {/* ── Hero ── */}
       <Box
         sx={{

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import SEO from '../components/common/SEO'
 import {
   Alert,
   Box,
@@ -93,6 +94,11 @@ function Contact() {
 
   return (
     <Box>
+      <SEO
+        title='Contact Us'
+        description='Get in touch with NATA. We are always ready to assist tattoo artists and piercers with membership questions, support, and resources.'
+        path='/contact'
+      />
       {/* ── Hero ── */}
       <Box
         sx={{
