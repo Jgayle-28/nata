@@ -464,7 +464,12 @@ function Membership() {
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={1.5}>
               <TextField fullWidth placeholder='Name*' size='small' />
               <TextField fullWidth placeholder='Email*' size='small' />
-              <GradientBorderButton>Subscribe</GradientBorderButton>
+              <GradientBorderButton
+                sx={{ display: { xs: 'block', md: 'inline-block' } }}
+                fullWidth
+              >
+                Subscribe
+              </GradientBorderButton>
             </Stack>
           </Reveal>
         </Container>

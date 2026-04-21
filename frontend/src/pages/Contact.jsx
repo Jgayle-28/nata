@@ -355,7 +355,12 @@ function Contact() {
                 size='small'
                 sx={inputSx}
               />
-              <GradientBorderButton>Subscribe</GradientBorderButton>
+              <GradientBorderButton
+                sx={{ display: { xs: 'block', md: 'inline-block' } }}
+                fullWidth
+              >
+                Subscribe
+              </GradientBorderButton>
             </Stack>
           </Reveal>
         </Container>

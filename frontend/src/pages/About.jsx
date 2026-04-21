@@ -89,13 +89,18 @@ function About() {
           maxWidth='lg'
           sx={{ position: 'relative', py: { xs: 10, md: 14 } }}
         >
-          <Box sx={{ maxWidth: { xs: '100%', md: '55%' } }}>
+          <Box
+            sx={{
+              maxWidth: { xs: '100%', md: '55%' },
+              textAlign: { xs: 'center', md: 'left' },
+            }}
+          >
             <Reveal>
               <Typography
                 variant='overline'
                 sx={{
                   letterSpacing: 8,
-                  fontSize: '1.65rem',
+                  fontSize: { xs: '0.9rem', md: '1.65rem' },
                   color: 'rgba(255,255,255,0.4)',
                   display: 'block',
                   mb: 2,
@@ -115,6 +120,7 @@ function About() {
                 <Box
                   component='span'
                   sx={{
+                    display: { xs: 'block', md: 'inline' },
                     background:
                       'linear-gradient(90deg, #c9a84c 0%, #d4af37 40%, #78755f 100%)',
                     WebkitBackgroundClip: 'text',
@@ -129,6 +135,7 @@ function About() {
                 sx={{
                   height: '1px',
                   width: { xs: '55%', md: '40%' },
+                  mx: { xs: 'auto', md: 0 },
                   background:
                     'linear-gradient(90deg, #d4af37 0%, #78755f 55%, transparent 100%)',
                   mb: 3,
@@ -137,7 +144,12 @@ function About() {
               <Typography
                 variant='body1'
                 color='text.secondary'
-                sx={{ maxWidth: 500, lineHeight: 1.8, mb: 4 }}
+                sx={{
+                  maxWidth: 500,
+                  mx: { xs: 'auto', md: 0 },
+                  lineHeight: 1.8,
+                  mb: 4,
+                }}
               >
                 Welcome to NATA — the ultimate platform designed exclusively for
                 tattoo artists to thrive in their craft and business. We
@@ -145,9 +157,16 @@ function About() {
                 showcasing your work. That's why we've created a space where
                 your art and professionalism take center stage.
               </Typography>
-              <GradientBorderButton component={RouterLink} to='/membership'>
-                Read More
-              </GradientBorderButton>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: { xs: 'center', md: 'flex-start' },
+                }}
+              >
+                <GradientBorderButton component={RouterLink} to='/membership'>
+                  Read More
+                </GradientBorderButton>
+              </Box>
             </Reveal>
           </Box>
         </Container>
@@ -238,9 +257,16 @@ function About() {
                 thrive and focus on their art, knowing they have reliable
                 coverage and peers behind them.
               </Typography>
-              <GradientBorderButton component={RouterLink} to='/membership'>
-                Become a Member
-              </GradientBorderButton>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: { xs: 'center', md: 'flex-start' },
+                }}
+              >
+                <GradientBorderButton component={RouterLink} to='/membership'>
+                  Become a Member
+                </GradientBorderButton>
+              </Box>
             </Reveal>
           </Grid>
         </Grid>

@@ -285,13 +285,18 @@ function Home() {
           maxWidth='lg'
           sx={{ position: 'relative', py: { xs: 10, md: 14 } }}
         >
-          <Box sx={{ maxWidth: { xs: '100%', md: '52%' } }}>
+          <Box
+            sx={{
+              maxWidth: { xs: '100%', md: '52%' },
+              textAlign: { xs: 'center', md: 'left' },
+            }}
+          >
             <Reveal>
               <Typography
                 variant='overline'
                 sx={{
                   letterSpacing: 6,
-                  fontSize: '1.68rem',
+                  fontSize: { xs: '0.9rem', md: '1.68rem' },
                   color: 'rgba(255,255,255,0.45)',
                   display: 'block',
                   mb: 2,
@@ -337,6 +342,7 @@ function Home() {
                   background:
                     'linear-gradient(90deg, #d4af37 0%, #78755f 55%, transparent 100%)',
                   mb: 3,
+                  mx: { xs: 'auto', md: 0 },
                 }}
               />
 
@@ -349,9 +355,16 @@ function Home() {
                 working tattoo artists.
               </Typography>
 
-              <GradientBorderButton component={RouterLink} to='/membership'>
-                Join Now
-              </GradientBorderButton>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: { xs: 'center', md: 'flex-start' },
+                }}
+              >
+                <GradientBorderButton component={RouterLink} to='/membership'>
+                  Join Now
+                </GradientBorderButton>
+              </Box>
             </Reveal>
           </Box>
         </Container>
@@ -572,9 +585,16 @@ function Home() {
                 ))}
               </Stack>
 
-              <GradientBorderButton component={RouterLink} to='/membership'>
-                Step Into Our World
-              </GradientBorderButton>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: { xs: 'center', md: 'flex-start' },
+                }}
+              >
+                <GradientBorderButton component={RouterLink} to='/membership'>
+                  Step Into Our World
+                </GradientBorderButton>
+              </Box>
             </Reveal>
           </Grid>
         </Grid>
@@ -821,7 +841,12 @@ function Home() {
             >
               <TextField fullWidth placeholder='Name' size='small' />
               <TextField fullWidth placeholder='Email' size='small' />
-              <GradientBorderButton>Subscribe</GradientBorderButton>
+              <GradientBorderButton
+                sx={{ display: { xs: 'block', md: 'inline-block' } }}
+                fullWidth
+              >
+                Subscribe
+              </GradientBorderButton>
             </Stack>
           </Reveal>
         </Container>
