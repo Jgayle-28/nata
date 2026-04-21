@@ -9,14 +9,14 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import CardMembershipOutlinedIcon from '@mui/icons-material/CardMembershipOutlined'
+import { FiFeather } from 'react-icons/fi'
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
-import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined'
+import { SlDiamond } from 'react-icons/sl'
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined'
 import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined'
 import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined'
 import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutlined'
-import CardGiftcardOutlinedIcon from '@mui/icons-material/CardGiftcardOutlined'
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined'
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined'
 import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
@@ -30,7 +30,7 @@ const plans = [
     title: 'Association Membership',
     price: '$29/mo',
     detail: 'Core coverage and member community access.',
-    Icon: CardMembershipOutlinedIcon,
+    Icon: FiFeather,
   },
   {
     title: '6-Month Membership',
@@ -42,7 +42,7 @@ const plans = [
     title: 'Yearly Membership',
     price: '$279',
     detail: 'Best-value yearly protection and perks.',
-    Icon: DiamondOutlinedIcon,
+    Icon: SlDiamond,
   },
 ]
 
@@ -95,7 +95,7 @@ const benefits = [
     desc: 'Access essential medical services and preventive care for you and your family.',
   },
   {
-    Icon: CardGiftcardOutlinedIcon,
+    Icon: ApartmentOutlinedIcon,
     title: 'Larger Corporation Perks',
     desc: 'Enjoy a range of exclusive offerings designed for your corporate needs.',
   },
@@ -402,7 +402,12 @@ function Home() {
                   >
                     <Box sx={{ textAlign: 'center', pt: 1 }}>
                       <Icon
-                        sx={{ fontSize: 48, color: 'primary.main', mb: 1 }}
+                        sx={{
+                          height: 32,
+                          width: 32,
+                          color: 'primary.main',
+                          mb: 1,
+                        }}
                       />
                       <Box
                         sx={{
@@ -542,7 +547,9 @@ function Home() {
                           placeItems: 'center',
                         }}
                       >
-                        <Icon sx={{ fontSize: 30, color: 'primary.main' }} />
+                        <Icon
+                          style={{ width: 30, height: 30, color: '#d4af37' }}
+                        />
                       </Box>
                     </Box>
                     <Box>
@@ -753,9 +760,13 @@ function Home() {
                   }
                 >
                   <Box sx={{ textAlign: 'center', pt: 1 }}>
-                    <plan.Icon
-                      sx={{ fontSize: 48, color: 'primary.main', mb: 1 }}
-                    />
+                    <Box
+                      sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}
+                    >
+                      <plan.Icon
+                        style={{ width: 32, height: 32, color: '#d4af37' }}
+                      />
+                    </Box>
                     <Box
                       sx={{
                         width: 60,

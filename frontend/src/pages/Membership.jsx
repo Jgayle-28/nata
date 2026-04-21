@@ -9,11 +9,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import CardMembershipOutlinedIcon from '@mui/icons-material/CardMembershipOutlined'
+import { FiFeather } from 'react-icons/fi'
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
-import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined'
+import { SlDiamond } from 'react-icons/sl'
 import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutlined'
-import CardGiftcardOutlinedIcon from '@mui/icons-material/CardGiftcardOutlined'
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined'
 import { Link as RouterLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import { createCheckoutSession } from '../services/paymentService'
@@ -26,7 +26,7 @@ const plans = [
     name: 'Association Membership',
     price: '$29 / month',
     summary: 'Essential member coverage and artist perks.',
-    Icon: CardMembershipOutlinedIcon,
+    Icon: FiFeather,
   },
   {
     id: 'association-6mo',
@@ -40,7 +40,7 @@ const plans = [
     name: 'Yearly Membership',
     price: '$279 one-time',
     summary: 'Best value for serious professionals.',
-    Icon: DiamondOutlinedIcon,
+    Icon: SlDiamond,
   },
 ]
 
@@ -51,7 +51,7 @@ const benefitCards = [
     desc: 'Our health insurance plans provide you with access to essential medical services. We prioritize your well-being by ensuring you have the necessary coverage for all your health needs, helping you maintain a healthy lifestyle and catching potential health issues early.',
   },
   {
-    Icon: CardGiftcardOutlinedIcon,
+    Icon: ApartmentOutlinedIcon,
     title: 'Other Benefits as Larger Corporations',
     desc: 'As a valued member, you gain access to a range of exclusive perks designed to enhance your overall well-being. We are committed to supporting you beyond insurance, fostering a holistic approach to your health and success.',
   },
@@ -311,9 +311,22 @@ function Membership() {
                     }
                   >
                     <Box sx={{ textAlign: 'center', pt: 1 }}>
-                      <plan.Icon
-                        sx={{ fontSize: 48, color: 'primary.main', mb: 1 }}
-                      />
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          mb: 1,
+                        }}
+                      >
+                        <plan.Icon
+                          style={{
+                            fontSize: 32,
+                            width: 32,
+                            height: 32,
+                            color: '#d4af37',
+                          }}
+                        />
+                      </Box>
                       <Box
                         sx={{
                           width: 60,
