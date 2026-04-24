@@ -4,14 +4,29 @@ import { Box, CircularProgress, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 function AuthCallback() {
-  const { isLoading, isAuthenticated } = useAuth0()
+  const { isLoading, isAuthenticated, appState, error } = useAuth0()
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!isLoading) {
-      navigate(isAuthenticated ? '/dashboard' : '/', { replace: true })
+    if (isLoading) return
+    if (error) {
+      navigate('/', { replace: true })
+      return
     }
-  }, [isAuthenticated, isLoading, navigate])
+    if (isAuthenticated) {
+      const returnTo = appState?.returnTo || '/dashboard'
+      navigate(returnTo, { replace: true })
+    }
+    // If not authenticated and not loading, Auth0 is still processing — wait
+  }, [isAuthenticated, isLoading, error, appState, navigate])
+
+  if (error) {
+    return (
+      <Box sx={{ minHeight: '40vh', display: 'grid', placeItems: 'center' }}>
+        <Typography color='error'>{error.message}</Typography>
+      </Box>
+    )
+  }
 
   return (
     <Box sx={{ minHeight: '40vh', display: 'grid', placeItems: 'center' }}>
