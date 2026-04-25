@@ -9,6 +9,7 @@ import AuthCallback from './pages/AuthCallback'
 import AuthEntry from './pages/AuthEntry'
 import Contact from './pages/Contact'
 import Dashboard from './pages/Dashboard'
+import CoursePage from './pages/CoursePage'
 import Home from './pages/Home'
 import Membership from './pages/Membership'
 import NotFound from './pages/NotFound'
@@ -48,6 +49,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/dashboard/course/:id'
+            element={
+              <ProtectedRoute>
+                <CoursePage />
               </ProtectedRoute>
             }
           />

@@ -172,6 +172,106 @@ function About() {
         </Container>
       </Box>
 
+      {/* ── Meet the Founder ── */}
+      <Container
+        maxWidth='lg'
+        sx={{
+          py: { xs: 7, md: 11 },
+          mb: { xs: 7, md: 11 },
+          mt: { xs: 7, md: 7 },
+        }}
+      >
+        <Grid container spacing={{ xs: 6, md: 10 }} alignItems='center'>
+          {/* Left: copy */}
+          <Grid item xs={12} md={7}>
+            <Reveal delay={0.1}>
+              <Typography
+                variant='overline'
+                sx={{
+                  letterSpacing: 6,
+                  fontSize: '0.75rem',
+                  color: 'rgba(255,255,255,0.35)',
+                  display: 'block',
+                  mb: 1,
+                }}
+              >
+                Meet the Founder
+              </Typography>
+              <Typography variant='h2' sx={{ mb: 1.5 }}>
+                Ryan{' '}
+                <Box
+                  component='span'
+                  sx={{
+                    background:
+                      'linear-gradient(90deg, #c9a84c 0%, #d4af37 40%, #78755f 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  Jordan
+                </Box>
+              </Typography>
+              <Box
+                sx={{
+                  height: '1px',
+                  width: { xs: '55%', md: '42%' },
+                  background:
+                    'linear-gradient(90deg, #d4af37 0%, #78755f 55%, transparent 100%)',
+                  mb: 3.5,
+                }}
+              />
+              <Typography
+                variant='body1'
+                color='text.secondary'
+                sx={{ lineHeight: 1.9 }}
+              >
+                The Founder of NATA is Ryan Jordan. A tattoo artist and shop
+                owner that has been in the industry for over 16 years. Ryan
+                worked, prior to tattooing, in corporate America. He realized
+                that there is a big void in tattooing that he wanted to fix.
+                That void is unity and buying power to provide things that
+                corporate America provides to its employees. Healthcare. 401k.
+                Retirement. His ambitions are to have the association protect
+                our industry as well as our health and future.
+              </Typography>
+            </Reveal>
+          </Grid>
+
+          {/* Right: framed image */}
+          <Grid item xs={12} md={5}>
+            <Reveal delay={0.05}>
+              <Box sx={{ position: 'relative', width: '100%' }}>
+                <Box
+                  component='img'
+                  src='/protecting.jpg'
+                  alt='Ryan Jordan — Founder of NATA'
+                  sx={{
+                    width: '100%',
+                    display: 'block',
+                    objectFit: 'cover',
+                    minHeight: { xs: 280, md: 420 },
+                    filter: 'grayscale(100%)',
+                  }}
+                />
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: 14,
+                    left: 14,
+                    right: 14,
+                    bottom: 14,
+                    border: '1px solid rgba(212,175,55,0.55)',
+                    pointerEvents: 'none',
+                    zIndex: 2,
+                  }}
+                />
+              </Box>
+            </Reveal>
+          </Grid>
+        </Grid>
+      </Container>
+
       {/* ── Art Meets Assurance ── */}
       <Container maxWidth='lg' sx={{ py: { xs: 7, md: 11 } }}>
         <Grid container spacing={{ xs: 6, md: 10 }} alignItems='center'>

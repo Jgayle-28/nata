@@ -1,6 +1,8 @@
+import { useAuth0 } from '@auth0/auth0-react'
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
 
 function Footer() {
+  const { isAuthenticated } = useAuth0()
   return (
     <Box
       component='footer'
@@ -19,18 +21,22 @@ function Footer() {
           </Grid>
           <Grid item xs={6} md={3}>
             <Stack spacing={0.7}>
-              <Link href='/' color='inherit' underline='hover'>
-                Home
-              </Link>
-              <Link href='/about' color='inherit' underline='hover'>
-                About
-              </Link>
-              <Link href='/membership' color='inherit' underline='hover'>
-                Membership
-              </Link>
-              <Link href='/contact' color='inherit' underline='hover'>
-                Contact
-              </Link>
+              {!isAuthenticated && (
+                <>
+                  <Link href='/' color='inherit' underline='hover'>
+                    Home
+                  </Link>
+                  <Link href='/about' color='inherit' underline='hover'>
+                    About
+                  </Link>
+                  <Link href='/membership' color='inherit' underline='hover'>
+                    Membership
+                  </Link>
+                  <Link href='/contact' color='inherit' underline='hover'>
+                    Contact
+                  </Link>
+                </>
+              )}
             </Stack>
           </Grid>
           <Grid item xs={6} md={4}>

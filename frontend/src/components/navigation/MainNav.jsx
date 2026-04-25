@@ -72,22 +72,36 @@ function NavItem({ label, to, onClick }) {
   )
 }
 
-function Logo() {
+function Logo({ disabled = false }) {
   return (
     <Box
-      component={RouterLink}
-      to='/'
-      sx={{
-        width: 64,
-        height: 64,
-        border: '2px solid',
-        borderColor: 'primary.main',
-        borderRadius: '50%',
-        display: 'grid',
-        placeItems: 'center',
-        textDecoration: 'none',
-        flexShrink: 0,
-      }}
+      component={disabled ? 'div' : RouterLink}
+      to={disabled ? undefined : '/'}
+      sx={
+        disabled
+          ? {
+              width: 64,
+              height: 64,
+              border: '2px solid',
+              borderColor: 'primary.main',
+              borderRadius: '50%',
+              display: 'grid',
+              placeItems: 'center',
+              flexShrink: 0,
+              opacity: 0.6,
+            }
+          : {
+              width: 64,
+              height: 64,
+              border: '2px solid',
+              borderColor: 'primary.main',
+              borderRadius: '50%',
+              display: 'grid',
+              placeItems: 'center',
+              textDecoration: 'none',
+              flexShrink: 0,
+            }
+      }
     >
       <Typography
         variant='caption'
@@ -213,7 +227,7 @@ function MainNav() {
               justifyContent: 'center',
             }}
           >
-            <Logo />
+            <Logo disabled={isAuthenticated} />
           </Box>
 
           {/* ── Desktop: right actions ── */}
@@ -363,7 +377,7 @@ function MainNav() {
             alignItems='center'
             sx={{ mb: 4 }}
           >
-            <Logo />
+            <Logo disabled={isAuthenticated} />
             <IconButton
               onClick={() => setOpen(false)}
               sx={{ color: 'rgba(255,255,255,0.5)' }}
